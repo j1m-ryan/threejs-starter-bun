@@ -1,5 +1,8 @@
 # 🌟 Three.js Starter with Bun, TypeScript & Vite 🚀
 
+
+![cube](repo-assets/starter.gif)
+
 ## Introduction 📖
 
 Welcome to the Three.js Starter Repo! This repository is designed to get you up and running with Three.js using the modern and efficient Bun runtime, TypeScript for type-safe code, and Vite for blazing-fast build times. Perfect for 3D web projects! 🌐
@@ -43,7 +46,6 @@ Start the development server:
 bun run dev
 ```
 Open your browser and visit http://localhost:5173.
-Enjoy coding with Three.js, TypeScript, and Vite! 🎉
 
 ## Building Your Project 🏗️
 
