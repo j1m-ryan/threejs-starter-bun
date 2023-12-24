@@ -2,3 +2,11 @@
   height: 100vh;
   width: 100vw;
 }
+
+* {
+  outline: none;
+}
+
+body {
+  overflow: hidden;
+}
