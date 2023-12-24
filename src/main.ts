@@ -126,7 +126,7 @@ function main() {
       if (canvas.requestFullscreen) {
         canvas.requestFullscreen();
       } else if (canvas.webkitRequestFullscreen) {
-        // Does not working on safari mobile version
+        // Does not work on safari mobile
         canvas.webkitRequestFullscreen();
       }
     } else {
