@@ -1,5 +1,6 @@
 import * as THREE from "three";
-
+import { OrbitControls } from "three/examples/jsm/Addons.js";
+import { Timer } from "three/examples/jsm/misc/Timer.js";
 function main() {
   const canvas = document.getElementById("c");
   if (!canvas) {
@@ -13,6 +14,9 @@ function main() {
   camera.position.z = 2;
 
   const scene = new THREE.Scene();
+
+  const controls = new OrbitControls(camera, canvas);
+  controls.enableDamping = true;
 
   const material = new THREE.MeshPhongMaterial({ color: "red" });
 
@@ -39,10 +43,12 @@ function main() {
     return needResize;
   }
 
-  function render(time: number) {
-    time *= 0.001;
-    cube.rotation.x = time;
-    cube.rotation.y = time;
+  const timer = new Timer();
+
+  const tick = () => {
+    const elapsedTime = timer.getElapsed();
+    timer.update();
+    cube.rotation.y = elapsedTime * 0.5;
 
     if (resizeRendererToDisplaySize(renderer)) {
       const canvas = renderer.domElement;
@@ -51,11 +57,12 @@ function main() {
     }
 
     renderer.render(scene, camera);
+    controls.update();
 
-    requestAnimationFrame(render);
-  }
+    requestAnimationFrame(tick);
+  };
 
-  requestAnimationFrame(render);
+  tick();
 }
 
 main();
