@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/Addons.js";
 import { Timer } from "three/examples/jsm/misc/Timer.js";
 import { resizeRendererToDisplaySize } from "./utils/resize";
-import _fullscreen from "./utils/fullscreen";
+import { createDoubleClickListener } from "./utils/fullscreen";
 import gsap from "gsap";
 import { cubeFolder, cameraFolder } from "./libgui";
 
@@ -13,7 +13,7 @@ const cubeProperties = {
 };
 
 function main() {
-  const canvas = document.getElementById("c");
+  const canvas = document.getElementById("c") as HTMLCanvasElement | null;
   if (!canvas) {
     alert("canvas not found");
     return;
@@ -109,23 +109,9 @@ function main() {
     requestAnimationFrame(tick);
   };
 
+  createDoubleClickListener(canvas);
+
   tick();
-
-  window.addEventListener("dblclick", () => {
-    const fullScreenElement =
-      document.fullscreenElement || document.webkitFullscreenElement;
-
-    if (!fullScreenElement) {
-      if (canvas.requestFullscreen) {
-        canvas.requestFullscreen();
-      } else if (canvas.webkitRequestFullscreen) {
-        // Does not work on safari mobile
-        canvas.webkitRequestFullscreen();
-      }
-    } else {
-      document.exitFullscreen();
-    }
-  });
 }
 
 main();
