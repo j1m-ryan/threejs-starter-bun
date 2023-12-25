@@ -2,16 +2,9 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/Addons.js";
 import { Timer } from "three/examples/jsm/misc/Timer.js";
 import { resizeRendererToDisplaySize } from "./utils/resize";
-import GUI from "lil-gui";
 import _fullscreen from "./utils/fullscreen";
 import gsap from "gsap";
-
-const gui = new GUI({
-  title: "ThreeJS Starter Bun",
-});
-
-const cubeFolder = gui.addFolder("cube");
-const cameraFolder = gui.addFolder("camera");
+import { cubeFolder, cameraFolder } from "./libgui";
 
 const cubeProperties = {
   color: "#ff0000",
@@ -28,7 +21,7 @@ function main() {
 
   const renderer = new THREE.WebGLRenderer({ antialias: true, canvas });
 
-  const camera = new THREE.PerspectiveCamera(75, 2, 0.1, 5);
+  const camera = new THREE.PerspectiveCamera(75, 2, 0.1, 100);
   camera.position.z = 2;
   cameraFolder
     .add(camera.position, "z")
