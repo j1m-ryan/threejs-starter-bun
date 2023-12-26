@@ -22,6 +22,8 @@ const geometry = new THREE.BoxGeometry(
 const cube = new THREE.Mesh(geometry, woodMaterial);
 cubeFolder.add(cube.position, "y").min(-3).max(3).step(0.1).name("elevation");
 
+cube.castShadow = true;
+
 cubeFolder
   .add(cubeProperties, "subdivisions")
   .min(1)

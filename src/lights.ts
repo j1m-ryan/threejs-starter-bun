@@ -18,4 +18,15 @@ lightsFolder
   .step(0.01)
   .name("hemisphere light intensity");
 
-export { ambientLight, hemisphereLight };
+const directionalLight = new THREE.DirectionalLight("white", 2);
+directionalLight.position.set(2, 2, 2);
+lightsFolder
+  .add(directionalLight, "intensity")
+  .min(0)
+  .max(10)
+  .step(0.01)
+  .name("directional light intensity");
+
+directionalLight.castShadow = true;
+
+export { ambientLight, hemisphereLight, directionalLight };

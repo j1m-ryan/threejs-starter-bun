@@ -7,12 +7,14 @@ import renderer from "./renderer";
 import camera from "./camera";
 import scene from "./scene";
 import controls from "./controls";
+import stats from "./utils/stats";
 
 const timer = new Timer();
 
 export default timer;
 
 export const tick = () => {
+  stats.begin();
   const elapsedTime = timer.getElapsed();
   timer.update();
   cube.rotation.y = elapsedTime * 0.5;
@@ -28,6 +30,6 @@ export const tick = () => {
 
   renderer.render(scene, camera);
   controls.update();
-
+  stats.end();
   requestAnimationFrame(tick);
 };

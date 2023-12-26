@@ -2,7 +2,7 @@ import { createDoubleClickListener } from "./utils/fullscreen";
 import scene from "./scene";
 import canvas from "./canvas";
 import cube from "./meshes/cube";
-import { ambientLight, hemisphereLight } from "./lights";
+import { ambientLight, directionalLight, hemisphereLight } from "./lights";
 import { tick } from "./timer";
 import sphere from "./meshes/sphere";
 import torus from "./meshes/torus";
@@ -18,6 +18,7 @@ function main() {
 
   scene.add(ambientLight);
   scene.add(hemisphereLight);
+  scene.add(directionalLight);
 
   scene.add(axesHelper);
   scene.add(hemisphereLightHelper);
