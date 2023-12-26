@@ -8,7 +8,7 @@ cameraFolder
   .add(camera.position, "z")
   .min(-3)
   .max(3)
-  .step(0.1)
+  .step(0.001)
   .name("camera position z");
 
 export default camera;
