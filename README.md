@@ -1,7 +1,7 @@
 # 🪵 Three.js Starter with Bun, TypeScript & Vite 🚀
 
 
-![cube](repo-assets/starter.gif)
+![cube](repo-assets/starter.webm)
 
 ## Introduction 📖
 
