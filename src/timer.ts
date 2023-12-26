@@ -1,6 +1,8 @@
 import { Timer } from "three/examples/jsm/misc/Timer.js";
 import { resizeRendererToDisplaySize } from "./utils/resize";
-import cube from "./cube";
+import cube from "./meshes/cube";
+import sphere from "./meshes/sphere";
+import torus from "./meshes/torus";
 import renderer from "./renderer";
 import camera from "./camera";
 import scene from "./scene";
@@ -14,6 +16,8 @@ export const tick = () => {
   const elapsedTime = timer.getElapsed();
   timer.update();
   cube.rotation.y = elapsedTime * 0.5;
+  sphere.rotation.y = elapsedTime * 0.5;
+  torus.rotation.y = elapsedTime * 0.5;
 
   if (resizeRendererToDisplaySize(renderer)) {
     const canvas = renderer.domElement;
