@@ -1,5 +1,5 @@
 import * as THREE from "three";
-
+import woodImage from "../static/textures/wood/wood_floor_worn_diff_1k.jpg";
 const onLoad = () => {
   console.log("loaded");
 };
@@ -15,8 +15,6 @@ const loadingManager = new THREE.LoadingManager(onLoad, onProgress, onError);
 
 const textureLoader = new THREE.TextureLoader(loadingManager);
 
-const woodTexture = textureLoader.load(
-  "../static/textures/wood/wood_floor_worn_diff_1k.jpg"
-);
+const woodTexture = textureLoader.load(woodImage);
 
 export { woodTexture };
