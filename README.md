@@ -1,4 +1,4 @@
-# 🧊 Three.js Starter with Bun, TypeScript & Vite 🚀
+# 🪵 Three.js Starter with Bun, TypeScript & Vite 🚀
 
 
 ![cube](repo-assets/starter.gif)

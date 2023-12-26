@@ -2,21 +2,18 @@ import * as THREE from "three";
 import { cubeFolder } from "./libgui";
 import gsap from "gsap";
 
+import { woodTexture } from "./loadingManager";
+
 const cubeProperties = {
-  color: "#ff0000",
   subdivisions: 20,
   animation: () => {},
 };
 
-const material = new THREE.MeshPhongMaterial({
-  color: cubeProperties.color,
+const material = new THREE.MeshStandardMaterial({
+  map: woodTexture,
 });
 
 cubeFolder.add(material, "wireframe");
-
-cubeFolder.addColor(cubeProperties, "color").onChange(() => {
-  material.color.set(cubeProperties.color);
-});
 
 const geometry = new THREE.BoxGeometry(
   1,
