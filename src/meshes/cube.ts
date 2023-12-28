@@ -1,14 +1,14 @@
 import * as THREE from "three";
-import { cubeFolder } from "../libgui";
+import { cubeFolder } from "../lilgui";
 import gsap from "gsap";
-import { woodMaterial } from "../shared/materials";
+import { cubeMaterial } from "../shared/materials";
 
 const cubeProperties = {
   subdivisions: 20,
   animation: () => {},
 };
 
-cubeFolder.add(woodMaterial, "wireframe");
+cubeFolder.add(cubeMaterial, "wireframe");
 
 const geometry = new THREE.BoxGeometry(
   1,
@@ -19,7 +19,7 @@ const geometry = new THREE.BoxGeometry(
   cubeProperties.subdivisions
 );
 
-const cube = new THREE.Mesh(geometry, woodMaterial);
+const cube = new THREE.Mesh(geometry, cubeMaterial);
 cubeFolder.add(cube.position, "y").min(-3).max(3).step(0.1).name("elevation");
 
 cube.castShadow = true;

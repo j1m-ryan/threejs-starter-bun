@@ -1,10 +1,9 @@
 import * as THREE from "three";
-
-import { woodMaterial } from "../shared/materials";
+import { normalMaterial } from "../shared/materials";
 
 const geometry = new THREE.TorusGeometry(0.3, 0.1, 20);
 
-const torus = new THREE.Mesh(geometry, woodMaterial);
+const torus = new THREE.Mesh(geometry, normalMaterial);
 torus.position.x = 2;
 torus.castShadow = true;
 
