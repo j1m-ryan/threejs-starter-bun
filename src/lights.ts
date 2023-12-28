@@ -28,5 +28,11 @@ lightsFolder
   .name("directional light intensity");
 
 directionalLight.castShadow = true;
+directionalLight.shadow.camera.far = 10;
 
+const directionalLightShadowMapSizeResolution = 2048;
+directionalLight.shadow.mapSize.set(
+  directionalLightShadowMapSizeResolution,
+  directionalLightShadowMapSizeResolution
+);
 export { ambientLight, hemisphereLight, directionalLight };
