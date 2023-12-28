@@ -1,6 +1,5 @@
 import * as THREE from "three";
 import {
-  lightsFolder,
   directionalLightFolder,
   ambientLightFolder,
   hemisphereLightFolder,
